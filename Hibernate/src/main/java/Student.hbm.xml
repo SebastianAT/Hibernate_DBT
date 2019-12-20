@@ -1,0 +1,26 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+ 
+  <class name="Student" table="student">
+    <id name="studentID" column="studentID" type="int"/>
+ 
+    
+ 
+    <set name="courses" cascade="all" table="keysinfo">
+      <key column="studentID "/>
+      <many-to-many class="Course" column="courseID" />
+    </set>
+  </class>
+ 
+  <class name="Course" table="course">
+    <id name="courseID" column="courseID" />
+    
+ 
+    <set name="students" inverse="false" cascade="all" table="keysinfo">
+      <key column="courseID" />
+      <many-to-many class="Student" column="studentID"/>
+    </set>
+  </class>
+</hibernate-mapping>

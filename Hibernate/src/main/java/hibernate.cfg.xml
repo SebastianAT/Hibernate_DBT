@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                          "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+ 
+<hibernate-configuration>
+ <session-factory>
+ 
+     <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+     <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+     <property name="hibernate.connection.url">jdbc:oracle:thin:@192.168.1.102:1521:XE</property>
+     <property name="hibernate.connection.username">system</property>
+     <property name="hibernate.connection.password">oldtimer</property>
+     <property name="hibernate.show_sql">true</property>
+     <property name="hibernate.connection.release_mode">auto</property>
+     <property name="current_session_context_class">thread</property>
+     <property name="hibernate.connection.autoReconnect">true</property>
+ 
+     <mapping class="org.hibernate_dbt.entities.Student" />
+     <mapping class="org.hibernate_dbt.entities.Lecturer" />
+     <mapping class="org.hibernate_dbt.entities.Course" />
+     
+ </session-factory>
+ 
+</hibernate-configuration>
